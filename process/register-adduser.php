@@ -6,7 +6,9 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['name']) 
 
 	$email = $_POST['email'];
 	$password = $_POST['password'];
-  $name = $_POST['name'];
+  	$name = $_POST['name'];
+
+  	
 
 	addNewUser($email, $name, $password);
 

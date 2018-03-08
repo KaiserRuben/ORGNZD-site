@@ -4,8 +4,12 @@ session_start();
 // Database
 
 
+$pdo = new PDO('mysql:host=localhost;dbname=orgnzd', 'root', '');
+
+
 
 // Functions
+
 
 function DateTimeNow() {
     $tz_object = new DateTimeZone('Europe/Berlin');
@@ -19,6 +23,9 @@ function DateTimeNow() {
 
 function login($email, $password)
 {
+
+    global $pdo;
+
   	$sql = "SELECT password, id FROM user WHERE email={$email}";
   	$row = $pdo->query($sql);
 
@@ -26,12 +33,12 @@ function login($email, $password)
 
     	$_SESSION['id'] = $row['id'];
 
-    	header('location:../views/start.php')
+    	header('location:../views/start.php');
     	exit(1);
 
 	}else{
 
-    header('location:../views/login.php?alert=wrong')
+    header('location:../views/login.php?alert=wrong');
     exit(1);
 
   	}
@@ -56,12 +63,18 @@ function auth()
 
 function addNewUser($email, $name, $password)
 {
+
+  global $pdo;
+
+  // Email überprüfen ob schon da
 	
+  $created = DateTimeNow();
+
 	$log = DateTimeNow();
 
-	$sql = "INSERT INTO user (email, name, password, log)
-    VALUES ('{$email}', '{$name}', '{$password}', '{$log}')";
-    $conn->exec($sql);
+	$sql = "INSERT INTO user (email, name, password, log, created)
+    VALUES ('{$email}', '{$name}', '{$password}', '{$log}', '{$created}')";
+    $pdo->exec($sql);
 
 }
 

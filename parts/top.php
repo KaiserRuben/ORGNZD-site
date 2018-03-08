@@ -4,8 +4,6 @@
 	<!-- Stylesheets, JS, usw. -->
 
 
-	<?php //Verbindung zur Datenbank
-	$pdo = new PDO('mysql:host=localhost;dbname=orgnzd', 'root', '');
-	?>
+	
 </head>
 <body>
