@@ -25,7 +25,7 @@ function RandomString($length = 150){
     $str = '';
     $max = mb_strlen($keyspace, '8bit') - 1;
     for ($i = 0; $i < $length; ++$i) {
-        $str .= $keyspace[random_int(0, $max)];
+        $str .= $keyspace[rand(0, $max)];
     }
     return $str;
 }
@@ -154,9 +154,9 @@ function changePasswordsendEmail($email)
       $from .= "Reply-To: team@orgnzd.de\n";
       $from .= "Content-Type: text/html\n";
       $text = "Liebe(r) ".$user['name']."<br /><br />
-              Dein Passwort bei ORGNZD wurde zurückgesetzt.<br />
+              Dein Passwort bei ORGNZD wurde zur&uuml;ckgesetzt.<br />
               Bitte klicke <a href='https://orgnzd.lennartvonwerder.de/views/reset.php?usrId=".$user['id']."&&resetkey=".$resetkey."'>hier</a> um es neu zu setzten. <br /><br />
-              Mit lieben Grüßen,<br />
+              Mit lieben Gr&uuml;&szlig;en,<br />
               Dein ORGNZD-Team.";
 
       mail($empfaenger, $betreff, $text, $from);
