@@ -10,7 +10,7 @@
 function login($email, $password)
 {
   $sql = "SELECT password FROM user WHERE id={$email}";
-  $pdo->query($sql) as $row;
+  $row = $pdo->query($sql);
   if($row['password'] = $password){
     //Hier fehlt noch die Session
     print('Hat geklappt');
