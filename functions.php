@@ -7,11 +7,20 @@ session_start();
 
 // Functions
 
+function DateTimeNow() {
+    $tz_object = new DateTimeZone('Europe/Berlin');
+    //date_default_timezone_set('Brazil/East');
+
+    $datetime = new DateTime();
+    $datetime->setTimezone($tz_object);
+    return $datetime->format('Y\-m\-d\ h:i:s');
+}
+
 
 function login($email, $password)
 {
   	$sql = "SELECT password, id FROM user WHERE email={$email}";
-  	$pdo->query($sql) as $row;
+  	$row = $pdo->query($sql);
 
   	if($row['password'] = $password){
 
@@ -45,11 +54,26 @@ function auth()
 	}
 }
 
-function DateTimeNow() {
-    $tz_object = new DateTimeZone('Europe/Berlin');
-    //date_default_timezone_set('Brazil/East');
+function addNewUser($email, $name, $password)
+{
+	
+	$log = DateTimeNow();
 
-    $datetime = new DateTime();
-    $datetime->setTimezone($tz_object);
-    return $datetime->format('Y\-m\-d\ h:i:s');
+	$sql = "INSERT INTO user (email, name, password, log)
+    VALUES ('{$email}', '{$name}', '{$password}', '{$log}')";
+    $conn->exec($sql);
+
 }
+
+function changePasswordsendEmail($email)
+{
+	// Email zum zurücksetzen senden
+
+}
+
+function changePassword($newpassword, $hash)
+{
+	// Code aus der mail überprüfen, password ändern
+}
+
+
