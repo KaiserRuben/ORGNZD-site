@@ -24,30 +24,32 @@ function DateTimeNow() {
 function login($email, $password)
 {
 
-    global $pdo;
+    if(isset($email) && isset($password))
+    {
+      
 
-  	$sql = "SELECT * FROM user WHERE email={$email}";
-  	$row = $pdo->query($sql);
 
-  	if($row['password'] = $password){
+      global $pdo;
 
-    	$id = $row['id'];
 
-      //$_SESSION['id'] = $row['id'];
+      $statement = $pdo->prepare("SELECT * FROM user WHERE email = :email");
+      $result = $statement->execute(array('email' => $email));
+      $user = $statement->fetch();
 
-      echo $id;
+      
 
-      exit(1);
-
-    	header('location:../views/start.php');
-    	exit(1);
-
-	}else{
-
-    header('location:../views/login.php?alert=wrong');
-    exit(1);
-
-  	}
+      if($user !== false && $password == $user['password'])
+      {
+        $_SESSION['id'] = $user['id'];
+        header('location:../views/start.php');
+        exit(1);
+      }
+      else
+      {
+        header('location:../views/login.php?alert=wrong');
+        exit(1);
+      }
+    }
 }
 
 function logout()
@@ -59,12 +61,7 @@ function logout()
 
 function auth()
 {
-	echo 'Eingelogt';
-
-  echo $_SESSION['id'];
-
-  exit(1);
-
+	
   if(isset($_SESSION['id'])){
 
 	}else{
