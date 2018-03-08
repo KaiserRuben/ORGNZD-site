@@ -10,16 +10,16 @@ session_start();
 
 function login($email, $password)
 {
-  	$sql = "SELECT password FROM user WHERE id={$email}";
+  	$sql = "SELECT password FROM user WHERE email={$email}";
   	$pdo->query($sql) as $row;
-  	
+
   	if($row['password'] = $password){
-    	
+
     	$_SESSION['id'] = $row['id'];
-    
+
     	header('location:../views/start.php')
     	exit(1);
-	
+
 	}else{
 
     header('location:../views/login.php?alert=wrong')
