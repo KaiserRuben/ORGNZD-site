@@ -15,7 +15,7 @@ include('../parts/top.php');
 
 <form action="../process/login-check.php" method="post">
 
-<input type="text" name="username">
+<input type="email" name="email">
 
 <input type="password" name="password">
 
