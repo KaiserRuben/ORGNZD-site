@@ -13,7 +13,7 @@ include('../parts/top.php');
 <h3>Login</h3>
 
 
-<form action="" method="post">
+<form action="../process/login-check.php" method="post">
 
 <input type="text" name="username">
 
