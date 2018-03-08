@@ -4,7 +4,7 @@ session_start();
 // Database
 
 
-$pdo = new PDO('mysql:host=localhost;dbname=orgnzd', 'root', '');
+require('db.php');
 
 
 
