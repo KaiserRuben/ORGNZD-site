@@ -26,12 +26,18 @@ function login($email, $password)
 
     global $pdo;
 
-  	$sql = "SELECT password, id FROM user WHERE email={$email}";
+  	$sql = "SELECT * FROM user WHERE email={$email}";
   	$row = $pdo->query($sql);
 
   	if($row['password'] = $password){
 
-    	$_SESSION['id'] = $row['id'];
+    	$id = $row['id'];
+
+      //$_SESSION['id'] = $row['id'];
+
+      echo $id;
+
+      exit(1);
 
     	header('location:../views/start.php');
     	exit(1);
@@ -53,10 +59,16 @@ function logout()
 
 function auth()
 {
-	if(isset($_SESSION['id'])){
+	echo 'Eingelogt';
+
+  echo $_SESSION['id'];
+
+  exit(1);
+
+  if(isset($_SESSION['id'])){
 
 	}else{
-		header('location:../views/login.php');
+		header('location:../views/login.php?alert=loginfirst');
 		exit(1);
 	}
 }
@@ -90,6 +102,21 @@ function addNewUser($email, $name, $password)
 
   }
 
+}
+
+function userName($id)
+{
+  global $pdo;
+
+    $sql = "SELECT * FROM user WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $name = $row['name'];
+        
+    }
+
+    
+
+    return $name;
 }
 
 function changePasswordsendEmail($email)
