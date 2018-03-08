@@ -12,6 +12,8 @@ include('parts/top.php');
 
 <h3>Startseite</h3>
 
+Dies ist die Startseite der App
+
 <a href="views/login.php">Login</a>
 
 <a href="views/register.php">Registrieren</a>
