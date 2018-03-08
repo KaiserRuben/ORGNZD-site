@@ -66,15 +66,29 @@ function addNewUser($email, $name, $password)
 
   global $pdo;
 
-  // Email überprüfen ob schon da
-	
   $created = DateTimeNow();
 
 	$log = DateTimeNow();
 
-	$sql = "INSERT INTO user (email, name, password, log, created)
-    VALUES ('{$email}', '{$name}', '{$password}', '{$log}', '{$created}')";
-    $pdo->exec($sql);
+  // Email überprüfen ob schon da
+
+  $sql = "SELECT id FROM user WHERE email='{$email}'";
+  $row = $pdo->query($sql);
+  $data_array = $row->fetchAll();
+
+  if($data_array){
+
+    echo("<script language='javascript' type='text/javascript'>
+    alert('Diese E-Mail gibt es schon, bitte gib eine neue ein oder überprüfe dein Passwort.');
+    var weiterleitung = '../views/register.php';\nwindow.setTimeout('window.location = weiterleitung',0);
+    </script>");
+  }else{
+
+	  $sql = "INSERT INTO user (email, name, password, log, created)
+      VALUES ('{$email}', '{$name}', '{$password}', '{$log}', '{$created}')";
+      $pdo->exec($sql);
+
+  }
 
 }
 
@@ -88,5 +102,3 @@ function changePassword($newpassword, $hash)
 {
 	// Code aus der mail überprüfen, password ändern
 }
-
-
