@@ -9,5 +9,5 @@ if(isset($_POST['email']) && $_POST['email'] !== ''){
 	changePasswordsendEmail($email);
 
 }else{
-	echo 'Fehler';
+	echo 'Es fehlen Daten';
 }
