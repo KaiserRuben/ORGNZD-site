@@ -10,7 +10,7 @@ session_start();
 
 function login($email, $password)
 {
-  	$sql = "SELECT password FROM user WHERE id={$email}";
+  	$sql = "SELECT password FROM user WHERE email={$email}";
   	$pdo->query($sql) as $row;
 
   	if($row['password'] = $password){
