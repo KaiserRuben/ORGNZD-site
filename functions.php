@@ -160,21 +160,21 @@ function changePasswordsendEmail($email)
               Dein ORGNZD-Team.";
 
       mail($empfaenger, $betreff, $text, $from);
-
+      print_r($empfaenger);
 
       $sql ="UPDATE user
-               SET resetkey = '{$email}', log = '{$created}'
+               SET resetkey = '{$resetkey}', log = '{$created}'
                WHERE id = {$user['id']};";
       $pdo->exec($sql);
       echo("<script language='javascript' type='text/javascript'>
-        var weiterleitung = '.../views/reset.php?usrId=".$user['id']."';\nwindow.setTimeout('window.location = weiterleitung',0);
+        var weiterleitung = '../views/reset.php?usrId=".$user['id']."';\nwindow.setTimeout('window.location = weiterleitung',0);
         </script>");
     }
     else
     {
       echo("<script language='javascript' type='text/javascript'>
         alert('Diese E-Mail-Adresse gibt es nicht.');
-        var weiterleitung = '.../views/reset.php';\nwindow.setTimeout('window.location = weiterleitung',0);
+        var weiterleitung = '../views/reset.php';\nwindow.setTimeout('window.location = weiterleitung',0);
         </script>");
     }
   }
