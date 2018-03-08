@@ -1,5 +1,5 @@
-
-
+<?php
+if(!isset($_GET['usrId'])){?>
 <div class="content">
 
 <h1>ORGNZD</h1>
@@ -21,4 +21,9 @@ Email von deinem Account hier reintragen. Wir schicken Dir dann eine Email mit d
 
 
 
-</div>
+</div><?php }
+else{
+  if(isset($_GET['resetkey'])){
+    //Hier fehlt noch der Code um ein neues Passwort zu setzten
+  }
+}
