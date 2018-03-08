@@ -5,7 +5,7 @@ session_start();
 
 
 
-// functions
+// Functions
 
 
 function login($email, $password)
