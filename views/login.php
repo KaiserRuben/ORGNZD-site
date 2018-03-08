@@ -15,16 +15,18 @@ include('../parts/top.php');
 
 <form action="../process/login-check.php" method="post">
 
-<input type="email" name="email">
+<input type="email" name="email" placeholder="Email">
 
-<input type="password" name="password">
+<input type="password" name="password" placeholder="Passwort">
 
 <input type="Submit" name="submit" value="Login">
 
 
 </form>
 
+<a href="reset.php">Passwort vergessen</a>
 
+<a href="register.php">Noch keinen Account?</a>
 
 
 </div>
