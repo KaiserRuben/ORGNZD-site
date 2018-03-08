@@ -24,24 +24,32 @@ function DateTimeNow() {
 function login($email, $password)
 {
 
-    global $pdo;
+    if(isset($email) && isset($password))
+    {
+      
 
-  	$sql = "SELECT password, id FROM user WHERE email={$email}";
-  	$row = $pdo->query($sql);
 
-  	if($row['password'] = $password){
+      global $pdo;
 
-    	$_SESSION['id'] = $row['id'];
 
-    	header('location:../views/start.php');
-    	exit(1);
+      $statement = $pdo->prepare("SELECT * FROM user WHERE email = :email");
+      $result = $statement->execute(array('email' => $email));
+      $user = $statement->fetch();
 
-	}else{
+      
 
-    header('location:../views/login.php?alert=wrong');
-    exit(1);
-
-  	}
+      if($user !== false && $password == $user['password'])
+      {
+        $_SESSION['id'] = $user['id'];
+        header('location:../views/start.php');
+        exit(1);
+      }
+      else
+      {
+        header('location:../views/login.php?alert=wrong');
+        exit(1);
+      }
+    }
 }
 
 function logout()
@@ -53,10 +61,11 @@ function logout()
 
 function auth()
 {
-	if(isset($_SESSION['id'])){
+	
+  if(isset($_SESSION['id'])){
 
 	}else{
-		header('location:../views/login.php');
+		header('location:../views/login.php?alert=loginfirst');
 		exit(1);
 	}
 }
@@ -90,6 +99,21 @@ function addNewUser($email, $name, $password)
 
   }
 
+}
+
+function userName($id)
+{
+  global $pdo;
+
+    $sql = "SELECT * FROM user WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $name = $row['name'];
+        
+    }
+
+    
+
+    return $name;
 }
 
 function changePasswordsendEmail($email)

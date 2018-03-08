@@ -1,4 +1,11 @@
+<?php
 
+include('../functions.php');
+
+
+include('../parts/top.php');
+
+?>
 
 <div class="content">
 
@@ -24,3 +31,9 @@
 
 
 </div>
+
+<?php
+
+include('../parts/bottom.php');
+
+?>
