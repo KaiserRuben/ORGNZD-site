@@ -46,7 +46,7 @@ function login($email, $password)
       }
       else
       {
-        header('location:../views/login.php?alert=wrong');
+        header('location:../views/login.php?alert=falsepass');
         exit(1);
       }
     }
@@ -99,6 +99,8 @@ function addNewUser($email, $name, $password)
 
   }
 
+  header('location:../views/login.php?alert=registrated');
+
 }
 
 function userName($id)
@@ -126,3 +128,5 @@ function changePassword($newpassword, $hash)
 {
 	// Code aus der mail überprüfen, password ändern
 }
+
+

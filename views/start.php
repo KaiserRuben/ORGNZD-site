@@ -14,9 +14,7 @@ echo 'Hallo '.userName($userid);
 
 <div class="content">
 
-<h1>ORGNZD</h1>
-
-<h3>Startseite</h3>
+<h1>My Projects</h1>
 
 Hier werden alle Projekte engezeigt werden.
 Mit den geteilten Projekten, und dem menü für einstellungen usw.
