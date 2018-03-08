@@ -8,7 +8,7 @@ auth();
 
 $userid = $_SESSION['id'];
 
-echo 'Hallo User '.userName($userid);
+echo 'Hallo '.userName($userid);
 
 ?>
 
