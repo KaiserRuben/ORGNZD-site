@@ -44,3 +44,12 @@ function auth()
 		exit(1);
 	}
 }
+
+function DateTimeNow() {
+    $tz_object = new DateTimeZone('Europe/Berlin');
+    //date_default_timezone_set('Brazil/East');
+
+    $datetime = new DateTime();
+    $datetime->setTimezone($tz_object);
+    return $datetime->format('Y\-m\-d\ h:i:s');
+}
