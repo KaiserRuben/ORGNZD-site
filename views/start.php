@@ -25,7 +25,7 @@ $sql = "SELECT * FROM projects WHERE userid = '{$userid}'";
 
         <a href="project.php?id=<?php echo $row['id']; ?>"> <div class="project">
 
-        	<h2><?php echo $row['name']; ?> - <?php echo $row['duedate']; ?></h2>
+        	<h2><?php echo $row['name']; ?> - <?php echo $row['type']; ?> - <?php echo $row['duedate']; ?></h2>
 
         </div> </a>
 

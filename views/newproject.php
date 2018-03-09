@@ -30,7 +30,7 @@ $userid = $_SESSION['id'];
 
   <input type="textfield" maxlength="500" name="description" placeholder="Füge eine griffige Beschreibung hinzu!">
 
-  <input type="date" maxlength="50" name="duedate" placeholder="Duedate" required>
+  <input type="datetime-local" maxlength="50" name="duedate" placeholder="Duedate" required>
 
   <input type="Submit" name="submit" value="Create Project">
 
