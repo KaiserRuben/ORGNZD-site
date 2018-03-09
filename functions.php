@@ -181,7 +181,16 @@ function changePasswordsendEmail($email)
 
 }
 
-function changePassword($newpassword, $hash)
+function changePassword($newpassword, $userId)
 {
-	// Code aus der mail überprüfen, password ändern
+  $log = DateTimeNow();
+  $sql ="UPDATE user
+           SET password = '{$newpassword}', log = '{$log}'
+           WHERE id = {$userId};";
+  $pdo->exec($sql);
+  echo("<script language='javascript' type='text/javascript'>
+    alert('Dein Passwort wurde geändert.');
+    var weiterleitung = '../views/login.php';\n
+    window.setTimeout('window.location = weiterleitung',0);
+    </script>");
 }
