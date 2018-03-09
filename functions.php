@@ -38,7 +38,6 @@ function login($email, $password)
     {
 
 
-
       global $pdo;
 
 
