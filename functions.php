@@ -26,7 +26,7 @@ function login($email, $password)
 
     if(isset($email) && isset($password))
     {
-      
+
 
 
       global $pdo;
@@ -36,7 +36,7 @@ function login($email, $password)
       $result = $statement->execute(array('email' => $email));
       $user = $statement->fetch();
 
-      
+
 
       if($user !== false && $password == $user['password'])
       {
@@ -61,7 +61,7 @@ function logout()
 
 function auth()
 {
-	
+
   if(isset($_SESSION['id'])){
 
 	}else{
@@ -108,10 +108,10 @@ function userName($id)
     $sql = "SELECT * FROM user WHERE id = '$id' LIMIT 1";
     foreach ($pdo->query($sql) as $row) {
         $name = $row['name'];
-        
+
     }
 
-    
+
 
     return $name;
 }
@@ -126,3 +126,4 @@ function changePassword($newpassword, $hash)
 {
 	// Code aus der mail überprüfen, password ändern
 }
+?>

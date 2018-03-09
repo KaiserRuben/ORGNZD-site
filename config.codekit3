@@ -19,6 +19,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/assets\/css\/register.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/register-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/css\/reset.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/reset-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/assets\/font\/test.font": {
 		"cB": 0,
 		"ft": 8192,
@@ -52,6 +72,32 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/assets\/css\/login.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/register.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/register.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/reset.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/reset.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
@@ -112,6 +158,13 @@
 		"oAP": "\/process\/reset-check.php",
 		"oF": 0
 		},
+	"\/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/README.html",
+		"oF": 0
+		},
 	"\/README.md": {
 		"cB": 0,
 		"cS": 0,
@@ -130,25 +183,25 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/views\/login.html": {
+	"\/views\/login.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/views\/login.html",
+		"oAP": "\/views\/login.php",
 		"oF": 0
 		},
-	"\/views\/register.html": {
+	"\/views\/register.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/views\/register.html",
+		"oAP": "\/views\/register.php",
 		"oF": 0
 		},
-	"\/views\/reset.html": {
+	"\/views\/reset.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/views\/reset.html",
+		"oAP": "\/views\/reset.php",
 		"oF": 0
 		},
 	"\/views\/start.php": {
