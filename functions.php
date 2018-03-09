@@ -66,7 +66,8 @@ function logout()
 {
 	session_destroy();
 
-	header('location:../views/login.php');
+	header('location:../views/login.php?alert=loginfirst');
+  exit(1);
 }
 
 function auth()
@@ -194,3 +195,39 @@ function changePassword($newpassword, $userId)
     window.setTimeout('window.location = weiterleitung',0);
     </script>");
 }
+
+
+// Projects
+
+function projects($userid)
+{
+    global $pdo;
+
+    
+
+    return $pdo->query('SELECT * FROM projects WHERE userid = "{$userid}" ');
+}
+
+function addProject($userid, $name, $type, $description, $duedate)
+{
+    global $pdo;
+
+    $created = DateTimeNow();
+
+    $log = DateTimeNow();
+
+    $sql = "INSERT INTO projects (userid, name, type, description, duedate, log, created)
+      VALUES ('{$userid}', '{$name}', '{$type}','{$description}', '{$duedate}', '{$log}', '{$created}')";
+      $pdo->exec($sql);
+
+    
+
+    header('location:../views/start.php');
+
+
+}
+
+
+
+?>
+

@@ -9,5 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/login.css">
+  <link rel="stylesheet" href="../assets/css/register.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
 </head>
 <body>

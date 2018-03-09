@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+
+include('../functions.php');
+
+=======
 if(!isset($_GET['usrId'])){?>
 <div class="content">
 
@@ -7,20 +12,32 @@ if(!isset($_GET['usrId'])){?>
 <h3>Passwort vergessen</h3>
 
 Email von deinem Account hier reintragen. Wir schicken Dir dann eine Email mit dem Link zum Zurücksetzen des Passwortes.
+>>>>>>> 6ae33a250dc55fd7a3c629f3621ebe9e772f843b
 
-<form action="../process/reset-check.php" method="post">
+include('../parts/top.php');
 
-<input type="email" name="email">
+?>
 
+<div class="content">
+  <h1 id="orgnzd-register-title">ORGNZD</h1>
+  <h3 id="register-title">Passwort vergessen</h3>
 
-<input type="Submit" name="submit" value="Abschicken">
+  <p>Email von deinem Account hier reintragen. Wir schicken Dir dann eine Email mit dem Link zum Zurücksetzen des Passwortes.</p>
 
+    <form action="../process/reset-check.php" method="post" id="reset-form">
+      <input type="email" name="email" placeholder="Email">
+      <input type="Submit" name="submit" value="Abschicken" id="reset-submit">
+    </form>
 
-</form>
+</div>
 
+<?php
 
+include('../parts/bottom.php')
 
-
+<<<<<<< HEAD
+?>
+=======
 </div><?php }
 else{
   if(isset($_GET['resetkey'])){
@@ -59,3 +76,4 @@ else{
 
   }
 }
+>>>>>>> 6ae33a250dc55fd7a3c629f3621ebe9e772f843b
