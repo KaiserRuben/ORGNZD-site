@@ -155,7 +155,7 @@ function changePasswordsendEmail($email)
       $resetkey = RandomString();
       $created = DateTimeNow();
       $empfaenger = $user['email'];
-      $betreff = "Ihr Passwort für ORGNZD. wurde zurückgesetzt.";
+      $betreff = "Ihr Passwort f&uuml;r ORGNZD. wurde zur&uuml;ckgesetzt.";
       $from = "From: ORGNZD Team <team@orgnzd.de>\n";
       $from .= "Reply-To: team@orgnzd.de\n";
       $from .= "Content-Type: text/html\n";
