@@ -25,7 +25,7 @@ $userid = $_SESSION['id'];
   <select name="type">
   <option value="Party">Party</option>
   <option value="Travel">Travel</option>
-  <option value="Event">Event</option>
+  <option value="Event">Other Event</option>
   </select>
 
   <input type="textfield" maxlength="500" name="description" placeholder="Füge eine griffige Beschreibung hinzu!">

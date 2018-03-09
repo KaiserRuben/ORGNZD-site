@@ -70,14 +70,18 @@ function logout()
   exit(1);
 }
 
-function auth()
+function auth($weiterleiten = 1)
 {
 
   if(isset($_SESSION['id'])){
-
+    if($weiterleiten == 1){
+      header('location:../views/start.php');
+    }
 	}else{
-		header('location:../views/login.php?alert=loginfirst');
-		exit(1);
+    if($weiterleiten != 1){
+		    header('location:views/login.php?alert=loginfirst');
+		    exit(1);
+    }
 	}
 }
 
@@ -225,7 +229,7 @@ function countProjects($userid)
     $sql = "SELECT * FROM projects WHERE userid = '{$userid}'";
     foreach ($pdo->query($sql) as $row)
     {
-          
+
           $n++;
     }
 
