@@ -1,7 +1,18 @@
 <?php
+<<<<<<< HEAD
 
 include('../functions.php');
 
+=======
+if(!isset($_GET['usrId'])){?>
+<div class="content">
+
+<h1>ORGNZD</h1>
+
+<h3>Passwort vergessen</h3>
+
+Email von deinem Account hier reintragen. Wir schicken Dir dann eine Email mit dem Link zum Zurücksetzen des Passwortes.
+>>>>>>> 6ae33a250dc55fd7a3c629f3621ebe9e772f843b
 
 include('../parts/top.php');
 
@@ -24,4 +35,13 @@ include('../parts/top.php');
 
 include('../parts/bottom.php')
 
+<<<<<<< HEAD
 ?>
+=======
+</div><?php }
+else{
+  if(isset($_GET['resetkey'])){
+    //Hier fehlt noch der Code um ein neues Passwort zu setzten
+  }
+}
+>>>>>>> 6ae33a250dc55fd7a3c629f3621ebe9e772f843b

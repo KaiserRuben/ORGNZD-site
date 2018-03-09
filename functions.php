@@ -4,7 +4,7 @@ session_start();
 // Database
 
 
-$pdo = new PDO('mysql:host=localhost;dbname=orgnzd', 'root', '');
+require('db.php');
 
 
 
@@ -18,6 +18,16 @@ function DateTimeNow() {
     $datetime = new DateTime();
     $datetime->setTimezone($tz_object);
     return $datetime->format('Y\-m\-d\ h:i:s');
+}
+
+function RandomString($length = 150){
+    $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $str = '';
+    $max = mb_strlen($keyspace, '8bit') - 1;
+    for ($i = 0; $i < $length; ++$i) {
+        $str .= $keyspace[rand(0, $max)];
+    }
+    return $str;
 }
 
 
@@ -46,7 +56,7 @@ function login($email, $password)
       }
       else
       {
-        header('location:../views/login.php?alert=wrong');
+        header('location:../views/login.php?alert=falsepass');
         exit(1);
       }
     }
@@ -99,6 +109,8 @@ function addNewUser($email, $name, $password)
 
   }
 
+  header('location:../views/login.php?alert=registrated');
+
 }
 
 function userName($id)
@@ -118,7 +130,54 @@ function userName($id)
 
 function changePasswordsendEmail($email)
 {
-	// Email zum zurücksetzen senden
+  if(isset($email))
+  {
+
+
+
+    global $pdo;
+
+
+    $statement = $pdo->prepare("SELECT * FROM user WHERE email = :email");
+    $result = $statement->execute(array('email' => $email));
+    $user = $statement->fetch();
+
+
+
+    if($user !== false && $email == $user['email'])
+    {
+      $resetkey = RandomString();
+      $created = DateTimeNow();
+      $empfaenger = $user['email'];
+      $betreff = "Ihr Passwort für ORGNZD. wurde zurückgesetzt.";
+      $from = "From: ORGNZD Team <team@orgnzd.de>\n";
+      $from .= "Reply-To: team@orgnzd.de\n";
+      $from .= "Content-Type: text/html\n";
+      $text = "Liebe(r) ".$user['name']."<br /><br />
+              Dein Passwort bei ORGNZD wurde zur&uuml;ckgesetzt.<br />
+              Bitte klicke <a href='https://orgnzd.lennartvonwerder.de/views/reset.php?usrId=".$user['id']."&&resetkey=".$resetkey."'>hier</a> um es neu zu setzten. <br /><br />
+              Mit lieben Gr&uuml;&szlig;en,<br />
+              Dein ORGNZD-Team.";
+
+      mail($empfaenger, $betreff, $text, $from);
+      print_r($empfaenger);
+
+      $sql ="UPDATE user
+               SET resetkey = '{$resetkey}', log = '{$created}'
+               WHERE id = {$user['id']};";
+      $pdo->exec($sql);
+      echo("<script language='javascript' type='text/javascript'>
+        var weiterleitung = '../views/reset.php?usrId=".$user['id']."';\nwindow.setTimeout('window.location = weiterleitung',0);
+        </script>");
+    }
+    else
+    {
+      echo("<script language='javascript' type='text/javascript'>
+        alert('Diese E-Mail-Adresse gibt es nicht.');
+        var weiterleitung = '../views/reset.php';\nwindow.setTimeout('window.location = weiterleitung',0);
+        </script>");
+    }
+  }
 
 }
 
