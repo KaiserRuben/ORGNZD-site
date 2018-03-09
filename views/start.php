@@ -17,14 +17,25 @@ $userid = $_SESSION['id'];
 <a href="newproject.php">New Project</a>
 
 <?php
-	
-	$projects = projects($userid);
 
-	foreach ($projects as $project) {
-		echo $project['name'];
-	}
+$sql = "SELECT * FROM projects WHERE userid = '{$userid}'";
+    foreach ($pdo->query($sql) as $row)
+        {
+        ?>
+
+        <a href="project.php?id=<?php echo $row['id']; ?>"> <div class="project">
+
+        	<h2><?php echo $row['name']; ?> - <?php echo $row['duedate']; ?></h2>
+
+        </div> </a>
+
+        <?php
+        }
 
 ?>
+
+
+
 
 <a href="setting.php">Settings</a>
 
