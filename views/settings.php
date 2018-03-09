@@ -8,15 +8,13 @@ auth();
 
 $userid = $_SESSION['id'];
 
-echo 'Hallo '.userName($userid);
-
 ?>
 
 <div class="content">
 
 <h1>Settings</h1>
 
-<a href="">Zurück zum Start</a>
+<a href="start.php">Zurück zum Start</a>
 
 Formular zum ändern aller Einstellungen des Users. Das Formular wird von ../process/settings-update.php empfangen
 
