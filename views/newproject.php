@@ -20,13 +20,17 @@ $userid = $_SESSION['id'];
 
 <form action="../process/newproject-save.php" method="post">
 
-  <input type="name" maxlength="150" name="name" placeholder="Project Name">
+  <input type="name" maxlength="150" name="name" placeholder="Project Name" required>
 
-  <input type="type" maxlength="50" name="type" placeholder="Project Type (Party, Wedding, Journey)">
+  <select name="type">
+  <option value="Party">Party</option>
+  <option value="Travel">Travel</option>
+  <option value="Event">Event</option>
+  </select>
 
   <input type="textfield" maxlength="500" name="description" placeholder="Füge eine griffige Beschreibung hinzu!">
 
-  <input type="date" maxlength="50" name="duedate" placeholder="Duedate">
+  <input type="date" maxlength="50" name="duedate" placeholder="Duedate" required>
 
   <input type="Submit" name="submit" value="Create Project">
 
