@@ -1,0 +1,12 @@
+p {
+  width: 300px;
+  color: #FFF;
+  line-height: 25px; }
+
+#reset-submit {
+  background: #E76B6B;
+  height: 45px;
+  width: 250px; }
+
+#reset-form {
+  margin-bottom: 120px; }
