@@ -4,7 +4,7 @@ include('../functions.php');
 
 include('../parts/top.php');
 
-auth(0);
+auth();
 
 $userid = $_SESSION['id'];
 

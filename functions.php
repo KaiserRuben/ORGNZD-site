@@ -70,18 +70,16 @@ function logout()
   exit(1);
 }
 
-function auth($weiterleiten = 1)
+function auth()
 {
 
   if(isset($_SESSION['id'])){
-    if($weiterleiten == 1){
-      header('location:../views/start.php');
-    }
+
 	}else{
-    if($weiterleiten != 1){
-		    header('location:views/login.php?alert=loginfirst');
-		    exit(1);
-    }
+
+		 header('location:views/login.php?alert=loginfirst');
+		 exit(1);
+
 	}
 }
 
