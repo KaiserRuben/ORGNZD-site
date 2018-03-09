@@ -12,7 +12,7 @@ $userid = $_SESSION['id'];
 
 <div class="content">
 
-<h1>My Projects</h1>
+<h1>Projects (<?php echo countProjects(); ?>)</h1>
 
 <a href="newproject.php">New Project</a>
 
@@ -39,10 +39,6 @@ $sql = "SELECT * FROM projects WHERE userid = '{$userid}'";
 
 <a href="setting.php">Settings</a>
 
-Hier werden alle Projekte engezeigt werden.
-Mit den geteilten Projekten, und dem menü für einstellungen usw.
-
-Hier wird man die Möglichkeite haben ein neues Projekt zu erstellen
 
 </div>
 

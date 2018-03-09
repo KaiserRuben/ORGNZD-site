@@ -129,6 +129,11 @@ function userName($id)
     return $name;
 }
 
+function userUpdate()
+{
+
+}
+
 function changePasswordsendEmail($email)
 {
   if(isset($email))
@@ -211,6 +216,26 @@ function projects($userid)
     return $pdo->query('SELECT * FROM projects WHERE userid = "{$userid}" ');
 }
 
+function countProjects()
+{
+    return 'Count';
+}
+
+function ProjectName($id)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM projects WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $name = $row['name'];
+
+    }
+
+
+
+    return $name;
+}
+
 function addProject($userid, $name, $type, $description, $duedate)
 {
     global $pdo;
@@ -223,11 +248,79 @@ function addProject($userid, $name, $type, $description, $duedate)
       VALUES ('{$userid}', '{$name}', '{$type}','{$description}', '{$duedate}', '{$log}', '{$created}')";
       $pdo->exec($sql);
 
+    $id = $pdo->lastInsertId();
+
+    header('location:../views/project.php?id='.$id);
 
 
-    header('location:../views/start.php');
+}
+
+function deleteProject($userid, $id){
+
+}
+
+function updateProject($userid, $name, $type, $description, $duedate)
+{
+    global $pdo;
+
+    $created = DateTimeNow();
+
+    $log = DateTimeNow();
+
+    $sql = "UPDATE INTO projects (userid, name, type, description, duedate, log, created)
+      VALUES ('{$userid}', '{$name}', '{$type}','{$description}', '{$duedate}', '{$log}', '{$created}')";
+      $pdo->exec($sql);
+}
 
 
+// Listen
+
+function addList($projectid, $name, $description, $value, $duedate)
+{
+    global $pdo;
+
+    $created = DateTimeNow();
+
+    $log = DateTimeNow();
+
+    $sql = "INSERT INTO lists (projectid, name, description, value, duedate, log, created)
+      VALUES ('{$projectid}', '{$name}', '{$description}', '{$value}', '{$duedate}', '{$log}', '{$created}')";
+      $pdo->exec($sql);
+
+    $id = $pdo->lastInsertId();
+
+    header('location:../views/list.php?id='.$id);
+
+}
+
+function ListGetProjectID($id)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM lists WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $pid = $row['projectid'];
+
+    }
+
+
+
+    return $pid;
+}
+
+function ListGetName($id)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM lists WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $name = $row['name'];
+
+    }
+
+
+
+    return $name;
 }
 
 
