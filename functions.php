@@ -216,9 +216,20 @@ function projects($userid)
     return $pdo->query('SELECT * FROM projects WHERE userid = "{$userid}" ');
 }
 
-function countProjects()
+function countProjects($userid)
 {
-    return 'Count';
+    global $pdo;
+
+    $n = 0;
+
+    $sql = "SELECT * FROM projects WHERE userid = '{$userid}'";
+    foreach ($pdo->query($sql) as $row)
+    {
+          
+          $n++;
+    }
+
+      return $n;
 }
 
 function ProjectName($id)
@@ -270,6 +281,23 @@ function updateProject($userid, $name, $type, $description, $duedate)
     $sql = "UPDATE INTO projects (userid, name, type, description, duedate, log, created)
       VALUES ('{$userid}', '{$name}', '{$type}','{$description}', '{$duedate}', '{$log}', '{$created}')";
       $pdo->exec($sql);
+}
+
+function AllowedForProject($userid, $projectid)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM projects WHERE id = '$projectid' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $uid = $row['userid'];
+
+    }
+
+    if($userid == $uid){
+
+    }else{
+        die('You are not allowed to open this project :(');
+    }
 }
 
 

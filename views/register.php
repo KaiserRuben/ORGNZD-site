@@ -14,7 +14,7 @@ include('../parts/top.php');
     <input type="text" maxlength="50" name="name" placeholder="name">
     <input type="email" maxlength="200" name="email" placeholder="email">
     <input type="password" maxlength="100" name="password" placeholder="password">
-    <input type="Submit" name="submit" value="Login">
+    <input type="Submit" name="submit" value="Registrieren">
   </form>
 </div>
 

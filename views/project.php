@@ -6,11 +6,11 @@ include('../parts/top.php');
 
 auth();
 
-
-
 $userid = $_SESSION['id'];
 
 $projectid = $_GET['id'];
+
+AllowedForProject($userid, $projectid);
 
 // Darf der User sich diese ProjectID angucken?!
 

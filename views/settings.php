@@ -14,7 +14,7 @@ $userid = $_SESSION['id'];
 
 <h1>Settings</h1>
 
-<a href="start.php">Zurück zum Start</a>
+<a href="start.php">Zurück</a>
 
 Formular zum ändern aller Einstellungen des Users. Das Formular wird von ../process/settings-update.php empfangen
 

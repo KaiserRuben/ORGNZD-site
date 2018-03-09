@@ -14,6 +14,8 @@ $projectid = $_GET['pid'];
 
 <div class="content">
 
+<a href="project.php?id=<?php echo $projectid; ?>">Zurück</a>
+
 <h1>New List for "<?php echo ProjectName($projectid); ?>"</h1>
 
 
