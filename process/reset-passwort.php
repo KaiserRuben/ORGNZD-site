@@ -1,5 +1,6 @@
 <?php
-if($_POST['password1'] == $_POST['password2'] && isset($_POST['password'])){  //Prüfen, ob die Passörter übereinstimmen
+include('../functions.php');
+if($_POST['password1'] == $_POST['password2'] && isset($_POST['password1'])){  //Prüfen, ob die Passörter übereinstimmen
 
   $newPw = $_POST['password1'];
   $userId = $_GET['id'];

@@ -1,22 +1,8 @@
 <?php
 
 include('../functions.php');
-
-=======
-if(!isset($_GET['usrId'])){?>
-<div class="content">
-
-<h1>ORGNZD</h1>
-
-<h3>Passwort vergessen</h3>
-
-Email von deinem Account hier reintragen. Wir schicken Dir dann eine Email mit dem Link zum Zurücksetzen des Passwortes.
-
-
 include('../parts/top.php');
-
-?>
-
+if(!isset($_GET['usrId'])){?>
 <div class="content">
   <h1 id="orgnzd-register-title">ORGNZD</h1>
   <h3 id="register-title">Passwort vergessen</h3>
@@ -36,17 +22,16 @@ include('../parts/bottom.php')
 
 
 ?>
-=======
 </div><?php }
 else{
   if(isset($_GET['resetkey'])){
     //Erstmal Userdaten holen
     $statement = $pdo->prepare("SELECT * FROM user WHERE id = :usrId");
-    $result = $statement->execute(array('usrId' => $_GET['usrId'])));
+    $result = $statement->execute(array('usrId' => $_GET['usrId']));
     $user = $statement->fetch();
     if($_GET['resetkey']==$user['resetkey']){
 ?>
-      <form action="../process/reset-password.php?id=<?php echo($user['id']);?>" method="post">
+      <form action="../process/reset-passwort.php?id=<?php echo($user['id']);?>" method="post">
 
       <input type="password" name="password1" placeholder="Neues Password">
 

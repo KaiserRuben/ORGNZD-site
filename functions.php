@@ -168,7 +168,7 @@ function changePasswordsendEmail($email)
                WHERE id = {$user['id']};";
       $pdo->exec($sql);
       echo("<script language='javascript' type='text/javascript'>
-        var weiterleitung = '../views/reset.php?usrId=".$user['id']."';\nwindow.setTimeout('window.location = weiterleitung',0);
+        var weiterleitung = '../views/login.php?';\nwindow.setTimeout('window.location = weiterleitung',0);
         </script>");
     }
     else
@@ -184,10 +184,13 @@ function changePasswordsendEmail($email)
 
 function changePassword($newpassword, $userId)
 {
+
+  global $pdo;
+
   $log = DateTimeNow();
-  $sql ="UPDATE user
-           SET password = '{$newpassword}', log = '{$log}'
-           WHERE id = {$userId};";
+  $statement = $pdo->prepare("UPDATE user SET password = '{$newpassword}', log = '{$log}' WHERE id = :usrId");
+
+  $result = $statement->execute(array('usrId' => $userId));
   $pdo->exec($sql);
   echo("<script language='javascript' type='text/javascript'>
     alert('Dein Passwort wurde geändert.');
@@ -203,7 +206,7 @@ function projects($userid)
 {
     global $pdo;
 
-    
+
 
     return $pdo->query('SELECT * FROM projects WHERE userid = "{$userid}" ');
 }
@@ -220,7 +223,7 @@ function addProject($userid, $name, $type, $description, $duedate)
       VALUES ('{$userid}', '{$name}', '{$type}','{$description}', '{$duedate}', '{$log}', '{$created}')";
       $pdo->exec($sql);
 
-    
+
 
     header('location:../views/start.php');
 
@@ -230,4 +233,3 @@ function addProject($userid, $name, $type, $description, $duedate)
 
 
 ?>
-
