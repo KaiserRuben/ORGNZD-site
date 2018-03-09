@@ -11,6 +11,9 @@
 body {
   font-family: "Roboto"; }
 
+a {
+  text-decoration: none; }
+
 .header {
   display: flex;
   height: 16vh; }
