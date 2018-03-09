@@ -66,7 +66,8 @@ function logout()
 {
 	session_destroy();
 
-	header('location:../views/login.php');
+	header('location:../views/login.php?alert=loginfirst');
+  exit(1);
 }
 
 function auth()
@@ -128,6 +129,11 @@ function userName($id)
     return $name;
 }
 
+function userUpdate()
+{
+
+}
+
 function changePasswordsendEmail($email)
 {
   if(isset($email))
@@ -149,7 +155,7 @@ function changePasswordsendEmail($email)
       $resetkey = RandomString();
       $created = DateTimeNow();
       $empfaenger = $user['email'];
-      $betreff = "Ihr Passwort für ORGNZD. wurde zurückgesetzt.";
+      $betreff = "Ihr Passwort f&uuml;r ORGNZD. wurde zur&uuml;ckgesetzt.";
       $from = "From: ORGNZD Team <team@orgnzd.de>\n";
       $from .= "Reply-To: team@orgnzd.de\n";
       $from .= "Content-Type: text/html\n";
@@ -167,7 +173,7 @@ function changePasswordsendEmail($email)
                WHERE id = {$user['id']};";
       $pdo->exec($sql);
       echo("<script language='javascript' type='text/javascript'>
-        var weiterleitung = '../views/reset.php?usrId=".$user['id']."';\nwindow.setTimeout('window.location = weiterleitung',0);
+        var weiterleitung = '../views/login.php?';\nwindow.setTimeout('window.location = weiterleitung',0);
         </script>");
     }
     else
@@ -181,8 +187,170 @@ function changePasswordsendEmail($email)
 
 }
 
-function changePassword($newpassword, $hash)
+function changePassword($newpassword, $userId)
 {
-	// Code aus der mail überprüfen, password ändern
+
+  global $pdo;
+
+  $log = DateTimeNow();
+  $statement = $pdo->prepare("UPDATE user SET password = '{$newpassword}', log = '{$log}' WHERE id = :usrId");
+
+  $result = $statement->execute(array('usrId' => $userId));
+  $pdo->exec($sql);
+  echo("<script language='javascript' type='text/javascript'>
+    alert('Dein Passwort wurde geändert.');
+    var weiterleitung = '../views/login.php';\n
+    window.setTimeout('window.location = weiterleitung',0);
+    </script>");
 }
+
+
+// Projects
+
+function projects($userid)
+{
+    global $pdo;
+
+
+
+    return $pdo->query('SELECT * FROM projects WHERE userid = "{$userid}" ');
+}
+
+function countProjects($userid)
+{
+    global $pdo;
+
+    $n = 0;
+
+    $sql = "SELECT * FROM projects WHERE userid = '{$userid}'";
+    foreach ($pdo->query($sql) as $row)
+    {
+          
+          $n++;
+    }
+
+      return $n;
+}
+
+function ProjectName($id)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM projects WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $name = $row['name'];
+
+    }
+
+
+
+    return $name;
+}
+
+function addProject($userid, $name, $type, $description, $duedate)
+{
+    global $pdo;
+
+    $created = DateTimeNow();
+
+    $log = DateTimeNow();
+
+    $sql = "INSERT INTO projects (userid, name, type, description, duedate, log, created)
+      VALUES ('{$userid}', '{$name}', '{$type}','{$description}', '{$duedate}', '{$log}', '{$created}')";
+      $pdo->exec($sql);
+
+    $id = $pdo->lastInsertId();
+
+    header('location:../views/project.php?id='.$id);
+
+
+}
+
+function deleteProject($userid, $id){
+
+}
+
+function updateProject($userid, $name, $type, $description, $duedate)
+{
+    global $pdo;
+
+    $created = DateTimeNow();
+
+    $log = DateTimeNow();
+
+    $sql = "UPDATE INTO projects (userid, name, type, description, duedate, log, created)
+      VALUES ('{$userid}', '{$name}', '{$type}','{$description}', '{$duedate}', '{$log}', '{$created}')";
+      $pdo->exec($sql);
+}
+
+function AllowedForProject($userid, $projectid)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM projects WHERE id = '$projectid' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $uid = $row['userid'];
+
+    }
+
+    if($userid == $uid){
+
+    }else{
+        die('You are not allowed to open this project :(');
+    }
+}
+
+
+// Listen
+
+function addList($projectid, $name, $description, $value, $duedate)
+{
+    global $pdo;
+
+    $created = DateTimeNow();
+
+    $log = DateTimeNow();
+
+    $sql = "INSERT INTO lists (projectid, name, description, value, duedate, log, created)
+      VALUES ('{$projectid}', '{$name}', '{$description}', '{$value}', '{$duedate}', '{$log}', '{$created}')";
+      $pdo->exec($sql);
+
+    $id = $pdo->lastInsertId();
+
+    header('location:../views/list.php?id='.$id);
+
+}
+
+function ListGetProjectID($id)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM lists WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $pid = $row['projectid'];
+
+    }
+
+
+
+    return $pid;
+}
+
+function ListGetName($id)
+{
+    global $pdo;
+
+    $sql = "SELECT * FROM lists WHERE id = '$id' LIMIT 1";
+    foreach ($pdo->query($sql) as $row) {
+        $name = $row['name'];
+
+    }
+
+
+
+    return $name;
+}
+
+
+
 ?>
