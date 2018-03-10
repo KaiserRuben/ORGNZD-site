@@ -1,0 +1,17 @@
+.footer {
+  justify-content: flex-end;
+  position: relative; }
+
+#task-input {
+  flex-grow: 1;
+  width: 220px; }
+
+#add-btn {
+  flex-grow: 1;
+  font-size: 18px;
+  height: 35px;
+  width: 85px;
+  padding-top: 2px; }
+
+.header input {
+  width: 45%; }
