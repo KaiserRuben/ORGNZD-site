@@ -19,6 +19,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/assets\/css\/newproject.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/newproject-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/assets\/css\/register.css": {
 		"aP": 1,
 		"bl": 0,
@@ -64,7 +74,7 @@
 		"tS": 0
 		},
 	"\/assets\/sass\/login.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -76,8 +86,21 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/sass\/newproject.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/newproject.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/sass\/register.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -90,7 +113,7 @@
 		"uL": 1
 		},
 	"\/assets\/sass\/reset.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -101,6 +124,13 @@
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/db.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/db.php",
+		"oF": 0
 		},
 	"\/functions.php": {
 		"cB": 0,
@@ -116,18 +146,18 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
-	"\/orgnzd.sql": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/orgnzd.sql",
-		"oF": 0
-		},
 	"\/parts\/bottom.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/parts\/bottom.php",
+		"oF": 0
+		},
+	"\/parts\/newproject-top.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/parts\/newproject-top.php",
 		"oF": 0
 		},
 	"\/parts\/top.php": {
@@ -144,6 +174,27 @@
 		"oAP": "\/process\/login-check.php",
 		"oF": 0
 		},
+	"\/process\/logout.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/process\/logout.php",
+		"oF": 0
+		},
+	"\/process\/newlist-save.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/process\/newlist-save.php",
+		"oF": 0
+		},
+	"\/process\/newproject-save.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/process\/newproject-save.php",
+		"oF": 0
+		},
 	"\/process\/register-adduser.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -157,6 +208,50 @@
 		"oA": 0,
 		"oAP": "\/process\/reset-check.php",
 		"oF": 0
+		},
+	"\/process\/reset-passwort.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/process\/reset-passwort.php",
+		"oF": 0
+		},
+	"\/process\/settings-update.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/process\/settings-update.php",
+		"oF": 0
+		},
+	"\/project view\/css\/main.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/project view\/css\/main-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/project view\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/project view\/index.html",
+		"oF": 0
+		},
+	"\/project view\/sass\/main.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/project view\/sass\/main.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/README.html": {
 		"cB": 0,
@@ -183,11 +278,39 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/views\/list.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/list.php",
+		"oF": 0
+		},
 	"\/views\/login.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/views\/login.php",
+		"oF": 0
+		},
+	"\/views\/newlist.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/newlist.php",
+		"oF": 0
+		},
+	"\/views\/newproject.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/newproject.html",
+		"oF": 0
+		},
+	"\/views\/project.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/project.php",
 		"oF": 0
 		},
 	"\/views\/register.php": {
@@ -204,6 +327,13 @@
 		"oAP": "\/views\/reset.php",
 		"oF": 0
 		},
+	"\/views\/settings.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/settings.php",
+		"oF": 0
+		},
 	"\/views\/start.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -218,7 +348,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 542225671,
-	"displayValue": "ORGNZD-site",
+	"displayValue": "ORGNZD-site-master",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-drunkArcher"
 	},

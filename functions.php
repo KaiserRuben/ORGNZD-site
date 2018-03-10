@@ -38,7 +38,6 @@ function login($email, $password)
     {
 
 
-
       global $pdo;
 
 
@@ -76,8 +75,10 @@ function auth()
   if(isset($_SESSION['id'])){
 
 	}else{
-		header('location:../views/login.php?alert=loginfirst');
-		exit(1);
+
+		 header('location:views/login.php?alert=loginfirst');
+		 exit(1);
+
 	}
 }
 
@@ -225,7 +226,7 @@ function countProjects($userid)
     $sql = "SELECT * FROM projects WHERE userid = '{$userid}'";
     foreach ($pdo->query($sql) as $row)
     {
-          
+
           $n++;
     }
 
