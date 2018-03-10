@@ -19,6 +19,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/assets\/css\/newlist.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/newlist-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/assets\/css\/newproject.css": {
 		"aP": 1,
 		"bl": 0,
@@ -26,6 +36,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/assets\/css\/newproject-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/css\/project.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/project-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -46,6 +66,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/assets\/css\/reset-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/css\/settings.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/settings-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -86,6 +116,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/sass\/newlist.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/newlist.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/sass\/newproject.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -95,6 +138,19 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/assets\/css\/newproject.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/project.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/project.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
@@ -121,6 +177,19 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/assets\/css\/reset.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/settings.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/settings.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
@@ -278,6 +347,13 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/views\/editlist.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/editlist.html",
+		"oF": 0
+		},
 	"\/views\/list.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -292,11 +368,18 @@
 		"oAP": "\/views\/login.php",
 		"oF": 0
 		},
-	"\/views\/newlist.php": {
+	"\/views\/newlist-old.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/views\/newlist.php",
+		"oAP": "\/views\/newlist-old.html",
+		"oF": 0
+		},
+	"\/views\/newlist.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/newlist.html",
 		"oF": 0
 		},
 	"\/views\/newproject.html": {
@@ -306,11 +389,18 @@
 		"oAP": "\/views\/newproject.html",
 		"oF": 0
 		},
-	"\/views\/project.php": {
+	"\/views\/newproject.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/views\/project.php",
+		"oAP": "\/views\/newproject.php",
+		"oF": 0
+		},
+	"\/views\/project.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/project.html",
 		"oF": 0
 		},
 	"\/views\/register.php": {
@@ -327,11 +417,11 @@
 		"oAP": "\/views\/reset.php",
 		"oF": 0
 		},
-	"\/views\/settings.php": {
+	"\/views\/settings.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/views\/settings.php",
+		"oAP": "\/views\/settings.html",
 		"oF": 0
 		},
 	"\/views\/start.php": {
@@ -348,7 +438,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 542225671,
-	"displayValue": "ORGNZD-site-master",
+	"displayValue": "ORGNZD-site",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-drunkArcher"
 	},
