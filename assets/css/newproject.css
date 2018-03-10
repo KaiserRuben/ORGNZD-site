@@ -72,7 +72,9 @@ form input:-moz-placeholder {
   height: 20vh;
   padding: 0 30px;
   margin-top: 3.5vh;
-  color: #404040; }
+  color: #404040;
+  resize: none;
+  border: none; }
 
 #desc-input::-webkit-input-placeholder {
   color: #F0F0F0;
@@ -128,7 +130,8 @@ form input:-moz-placeholder {
   border-radius: 200px;
   -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.1);
-  text-align: center; }
+  text-align: center;
+  font-family: "Roboto"; }
 
 #add-btn {
   width: 85px;
@@ -138,4 +141,5 @@ form input:-moz-placeholder {
   color: #FFF;
   font-size: 18px;
   -webkit-box-shadow: 0px 6px 11px rgba(252, 184, 184, 0.3);
-          box-shadow: 0px 6px 11px rgba(252, 184, 184, 0.3); }
+          box-shadow: 0px 6px 11px rgba(252, 184, 184, 0.3);
+  font-weight: 300; }
