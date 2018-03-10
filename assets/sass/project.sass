@@ -1,0 +1,118 @@
+// - - - VARIABLES - - - //
+$pink: #FCB8B8
+$black: #404040
+
+// - - - RESETS - - - //
+.flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+input:focus, select:focus, textarea:focus, button:focus
+  outline: none
+
+.header
+  display: flex
+  color: $black
+  width: 100%
+  height: 15vh
+  justify-content: space-around
+  align-items: center
+
+  a
+    flex-grow: 0.35
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+
+  h1
+    font-family: "Roboto"
+    font-size: 38px
+    letter-spacing: 1px
+    flex-grow: 1.65
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    padding-left: 25px
+
+.list-wrapper
+  width: 85%
+  margin: 0 auto 30px auto
+
+.list-headline
+  font-family: "Roboto"
+  font-size: 30px
+  color: $black
+  letter-spacing: 1px
+  margin-bottom: 10px
+
+.item
+  height: 35px
+  width: 100%
+  margin-bottom: 10px
+  display: flex
+
+.left
+  height: 100%
+  width: 90%
+  display: flex
+  align-items: center
+
+  span
+    font-family: "Roboto"
+    font-size: 19px
+    letter-spacing: 1px
+    margin-top: 3px
+
+.indicator
+  height: 20px
+  width: 3px
+  border-radius: 200px
+  background: pink
+  margin-right: 15px
+
+.right
+  height: 100%
+  width: 10%
+  @extend .flex-center
+
+.box
+  height: 18px
+  width: 18px
+  border: 1.5px solid $pink
+  border-radius: 5px
+
+#location-headline
+  padding-left: 28px
+
+.footer
+  position: absolute
+  bottom: 0
+  display: flex
+  justify-content: space-between
+  width: 100%
+  padding: 0 30px
+  align-items: center
+  height: 15vh
+
+#add-btn
+  height: 60px
+  width: 60px
+  background: $pink
+  border-radius: 200px
+  color: #FFF
+  font-size: 35px
+  text-decoration: none
+  @extend .flex-center
+  padding: 0 0 2px 0
+
+#settings-icon
+  margin-top: 10px

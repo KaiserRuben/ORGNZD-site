@@ -1,0 +1,129 @@
+<!-- <?php
+
+include('../functions.php');
+
+include('../parts/top.php');
+
+auth();
+
+$userid = $_SESSION['id'];
+
+$projectid = $_GET['id'];
+
+AllowedForProject($userid, $projectid);
+
+ Darf der User sich diese ProjectID angucken?!
+
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project.</title>
+  <link rel="stylesheet" href="../assets/css/project.css">
+</head>
+<body>
+  <div class="content">
+    <div class="header">
+      <!-- BACK BTN -->
+      <a href="start.php">
+        <svg width="23px" height="19px" viewBox="0 0 23 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="400" font-family="Ionicons" letter-spacing="1.03125" font-size="33">
+                <g id="Project-view-Copy" transform="translate(-29.000000, -50.000000)" fill="#404040">
+                    <text id="ion-arrow-left-c---Ionicons">
+                        <tspan x="29" y="72"></tspan>
+                    </text>
+                </g>
+            </g>
+        </svg>
+      </a>
+
+      <!-- PROJECT NAME -->
+      <h1><?php echo ProjectName($projectid); ?> Birthday</h1>
+    </div>
+
+    <div class="list-wrapper">
+      <h2 class="list-headline">What to buy</h2>
+      <ul>
+        <div class="item">
+          <div class="left">
+            <div class="indicator"></div>
+            <span>Buy baloons</span>
+          </div>
+          <div class="right">
+            <a href="#" class="box"></a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">
+            <div class="indicator"></div>
+            <span>Invite friends</span>
+          </div>
+          <div class="right">
+            <a href="#" class="box"></a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">
+            <div class="indicator"></div>
+            <span>Book the place</span>
+          </div>
+          <div class="right">
+            <a href="#" class="box"></a>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <h2 class="list-headline" id="location-headline">Location</h2>
+
+    <div class="footer">
+      <a href="project-settings.php" id="settings-icon">
+        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal" font-family="material" letter-spacing="0.884374976" font-size="28.2999992">
+                <g id="Project-view-Copy" transform="translate(-38.000000, -597.000000)" fill="#D2D2D2">
+                    <text id="settings---material">
+                        <tspan x="36" y="619"></tspan>
+                    </text>
+                </g>
+            </g>
+        </svg>
+      </a>
+      <a href="newlist.php?pid=<?php echo $projectid; ?>" id="add-btn">+</a>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- <?php
+
+$sql = "SELECT * FROM lists WHERE projectid = '{$projectid}'";
+    foreach ($pdo->query($sql) as $row)
+        {
+        ?>
+
+        <a href="list.php?id=<?php echo $row['id']; ?>"> Test <div class="project">
+
+        	<h2><?php echo $row['name']; ?> - <?php echo $row['duedate']; ?></h2>
+
+        </div> </a>
+
+        <?php
+        }
+
+?> -->
+
+<!-- <?php
+
+include('../parts/bottom.php')
+
+?> -->
