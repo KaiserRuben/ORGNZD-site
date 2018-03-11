@@ -194,6 +194,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/sass\/usersettings.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/usersettings.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/db.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -429,6 +442,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/views\/start.php",
+		"oF": 0
+		},
+	"\/views\/usersettings.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/usersettings.html",
 		"oF": 0
 		}
 	},
